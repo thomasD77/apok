@@ -12,12 +12,72 @@ class SubscriberController extends Controller
 {
     //
 
-    public function subscribe(SubscriberRequest $request)
+    public function subscribe(Request $request)
     {
+        if($request->locale == 'nl')
+        {
+            $request->validate([
+                'question_1'=>'required',
+                'question_2'=>'required',
+                'question_3'=>'required',
+                'question_4'=>'required',
+                'question_5'=>'required',
+                'first_name'=>'required',
+                'last_name'=>'required',
+                'email'=>'required',
+                'telephone'=>'required',
+                'company'=>'required',
+                'tiebreaker_question'=>'required',
+            ],
+                [
+                    'question_1.required'=>'Deze vraag is verplicht in te vullen.',
+                    'question_2.required'=>'Deze vraag is verplicht in te vullen.',
+                    'question_3.required'=>'Deze vraag is verplicht in te vullen.',
+                    'question_4.required'=>'Deze vraag is verplicht in te vullen.',
+                    'question_5.required'=>'Deze vraag is verplicht in te vullen.',
+                    'first_name.required'=>'Voornaam is verplicht in te vullen.',
+                    'last_name.required'=>'Naam is verplicht in te vullen.',
+                    'email.required'=>'E-mail is verplicht in te vullen.',
+                    'telephone.required'=>'Telefoon of GSM is verplicht in te vullen.',
+                    'company.required'=>'Bedrijf is verplicht in te vullen.',
+                    'tiebreaker_question.required'=>'Schiftingsvraag is verplicht in te vullen.',
+                ]
+
+            );
+        }
+        else
+        {
+            $request->validate([
+                'question_1'=>'required',
+                'question_2'=>'required',
+                'question_3'=>'required',
+                'question_4'=>'required',
+                'question_5'=>'required',
+                'first_name'=>'required',
+                'last_name'=>'required',
+                'email'=>'required',
+                'telephone'=>'required',
+                'company'=>'required',
+                'tiebreaker_question'=>'required',
+            ],
+                [
+                    'question_1.required'=>'Cette question est obligatoire à remplir.',
+                    'question_2.required'=>'Cette question est obligatoire à remplir.',
+                    'question_3.required'=>'Cette question est obligatoire à remplir.',
+                    'question_4.required'=>'Cette question est obligatoire à remplir.',
+                    'question_5.required'=>'Cette question est obligatoire à remplir.',
+                    'first_name.required'=>'Le prénom est obligatoire.',
+                    'last_name.required'=>'Le nom est obligatoire.',
+                    'email.required'=>"L' e-mail est obligatoire.",
+                    'telephone.required'=>'Téléphone ou GSM obligatoire à renseigner.',
+                    'company.required'=>"L'entreprise doit remplir.",
+                    'tiebreaker_question.required'=>'La question de départage doit être complétée.',
+                ]
+            );
+        }
 
         if ($_POST['g-recaptcha-response'] != "") {
             $secret = '6LcO3TodAAAAAPJtkSEBIjMX9nWezAVgjKVcZcf5';
-
             $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
             $responseData = json_decode($verifyResponse);
 
@@ -46,8 +106,5 @@ class SubscriberController extends Controller
         return view('includes.thankyou', compact('lang'));
     }
 
-    public function thankyou()
-    {
-        return view('includes.thankyou');
-    }
+
 }

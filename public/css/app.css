@@ -1,9 +1,10 @@
+/*** Algemene CSS ***/
+
 html {
     box-sizing: border-box;
     width: 100%;
     overflow-x: hidden;
 }
-
 
 body {
     background-color: #e7e7e7;
@@ -39,6 +40,8 @@ h4  {
     margin-bottom: 25px;
 }
 
+/*** Header ***/
+
 .languages {
     font-size: 41px;
     color: #001b69;
@@ -58,6 +61,8 @@ h4  {
     margin-top: 25px;
     padding-left: 24px;
 }
+
+/*** Form ***/
 
 .form__content {
     background-color: white;
@@ -142,12 +147,7 @@ hr.hr__style {
     color: white;
 }
 
-
-
-
-
-
-
+/*** Responsive ***/
 
 @media (min-width: 768px)
 {
@@ -187,7 +187,7 @@ hr.hr__style {
         margin-top: -40px;
     }
     .header__intro {
-        margin-top: 120px;
+        margin-top: 80px;
         padding-left: 60px;
     }
     .form__content {
@@ -196,5 +196,4 @@ hr.hr__style {
     hr.hr__style {
         margin-top: 130px;
     }
-
 }
