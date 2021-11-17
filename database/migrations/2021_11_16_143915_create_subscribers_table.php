@@ -15,6 +15,7 @@ class CreateSubscribersTable extends Migration
     {
         Schema::create('subscribers', function (Blueprint $table) {
             $table->id();
+            $table->string('language')->nullable();
             $table->text('question_1')->nullable();
             $table->text('question_2')->nullable();
             $table->text('question_3')->nullable();
