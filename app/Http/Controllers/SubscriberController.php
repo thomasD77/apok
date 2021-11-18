@@ -57,6 +57,7 @@ class SubscriberController extends Controller
                 'email'=>'required',
                 'company'=>'required',
                 'tiebreaker_question'=>'required',
+
             ],
                 [
                     'question_1.required'=>'Champ obligatoire.',
@@ -73,22 +74,40 @@ class SubscriberController extends Controller
             );
         }
 
-        $data = [
-            'language' => $request->locale,
-            'question_1' => $request->question_1,
-            'question_2' => $request->question_2,
-            'question_3' => $request->question_3,
-            'question_4' => $request->question_4,
-            'question_5' => $request->question_5,
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'company' => $request->company,
-            'tiebreaker_question' => $request->tiebreaker_question,
-            'approval' => $request->approval,
-        ];
 
-        Subscriber::create($data);
+        if($request->get('approval') == null)
+        {
+            $approval = 0;
+        }
+        else{
+            $approval = 1;
+        }
+
+        if($request->get('question_4') == 'false')
+        {
+            $question_4 = 0;
+        }
+        else
+        {
+            $question_4 = 1;
+        }
+
+
+        $subscriber = new Subscriber();
+        $subscriber->language = $request->locale;
+        $subscriber->question_1 = $request->question_1;
+        $subscriber->question_2 = $request->question_2;
+        $subscriber->question_3 = $request->question_3;
+        $subscriber->question_4 = $question_4;
+        $subscriber->question_5 = $request->question_5;
+        $subscriber->first_name = $request->first_name;
+        $subscriber->last_name = $request->last_name;
+        $subscriber->email = $request->email;
+        $subscriber->company = $request->company;
+        $subscriber->tiebreaker_question = $request->tiebreaker_question;
+        $subscriber->approval = $approval;
+        $subscriber->save();
+
         $lang = $request->locale;
 
         return view('includes.thankyou', compact('lang'));

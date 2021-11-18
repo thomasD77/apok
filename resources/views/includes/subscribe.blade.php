@@ -27,7 +27,7 @@
             <h3 class="label__question">{{__('Vraag 4: Ken je of heb je al gehoord van de APOK Exclusives?*')}}</h3>
             <div class="d-flex label__checkbox">
                 <label class="me-5 d-flex align-items-center"><input class="me-3 input__checkbox" type="checkbox" name="question_4" value="1" {{ old('question_4') == 1 ? 'checked' : '' }}>{{__('Ja')}}</label>
-                <label class="d-flex align-items-center"><input class="me-3 input__checkbox" type="checkbox" name="question_4" value="false" {{ old('question_4') == 'false' ? 'checked' : '' }}>{{{__('Neen')}}}</label>
+                <label class="d-flex align-items-center"><input class="me-3 input__checkbox" type="checkbox" name="question_4" value="false" {{ old('question_4') === 'false' ? 'checked' : '' }}>{{{__('Neen')}}}</label>
             </div>
             @error('question_4')
             <p class="text-danger mt-2"> {{ $message }}</p>
