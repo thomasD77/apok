@@ -29,7 +29,6 @@
                 <img src="{{ asset('images/apok_logo.png') }}" alt="logo">
             </div>
             <div class="col-md-6">
-                <h2 class="languages"><a class="languages" href="{{ route('home', 'nl') }}">NL</a><span class="mx-3">-</span><span><a href="{{ route('home', 'fr') }}">FR</a></span></h2>
             </div>
             <div class="col-md-6 header__intro">
                 <h1>{{__('Bedankt!')}}</h1>

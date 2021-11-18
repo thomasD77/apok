@@ -40,15 +40,7 @@
             </div>
         </div>
 
-        <h3 class="label__question mb-5">{{__('Jouw gegevens:')}}</h3>
-
-        <h4>{{__('Wat was het aantal gevangen myAPOK leaflets in de wervelwindcabine?*')}}</h4>
-        <div class="col-12 col-lg-6">
-            <input class="input__style" type="number" name="question_5">
-            @error('question_5')
-            <p class="text-danger mt-2"> {{ $message }}</p>
-            @enderror
-        </div>
+        <h3 class="label__question mb-0">{{__('Jouw gegevens:')}}</h3>
 
         <div class="row">
             <div class="col-12 col-lg-6 custom__margin">
@@ -89,6 +81,14 @@
                 @enderror
             </div>
 
+            <h4 class="custom__margin">{{__('Wat was het aantal gevangen myAPOK leaflets in de wervelwindcabine?*')}}</h4>
+            <div class="col-12 col-lg-6">
+                <input class="input__style" type="number" name="question_5">
+                @error('question_5')
+                <p class="text-danger mt-2"> {{ $message }}</p>
+                @enderror
+            </div>
+
             <h4 class="custom__margin mb-1">{{__('Schiftingsvraag voor de grote prijzen. *')}}</h4>
             <h4>{{__('Hoeveel geregistreerde personen zullen er mee doen in de wervelwindcabine?')}}</h4>
             <div class="col-12 col-lg-6">
@@ -103,11 +103,10 @@
             <h4 class="custom__margin">{{__('Mogen we je inschrijven op onze nieuwsbrief ivm opleidingen, producten, nieuws en promoties?')}}</h4>
             <label class="d-flex align-items-center"><input class="me-3 input__checkbox" type="checkbox" name="approval" value="1">{{__('Ja natuurlijk!')}}</label>
         </div>
-        <div class="g-recaptcha mt-4" id="g-recaptcha" data-sitekey="6LcO3TodAAAAANozRRIt780HBKpmpPqCE4poaKyV"></div>
         <div class="d-flex justify-content-center justify-content-lg-end buttons">
             <a class="btn__restart" href="{{ route('home', app()->getLocale()) }}">{{__('wis en herstart')}}</a>
            <button class="btn__register" type="submit">{{__('registreren')}}</button>
         </div>
     </div>
 </form>
-<script src="https://www.google.com/recaptcha/api.js"></script>
+

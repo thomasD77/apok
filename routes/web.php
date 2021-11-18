@@ -20,7 +20,8 @@ Route::redirect('/', '/nl');
 Route::get('/{locale}', function ($locale)
 {
     App::setLocale($locale);
-    return view('includes.page');
+    $lang = app()->getLocale();
+    return view('includes.page', compact('lang'));
 })->name('home');
 
 Route::POST('/{lang}/subscribe', 'App\Http\Controllers\SubscriberController@subscribe')->name('subscribe');

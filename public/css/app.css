@@ -42,20 +42,20 @@ h4  {
 
 /*** Header ***/
 
-.languages {
+.languages__not-active {
     font-size: 41px;
     color: #001b69;
     padding-left: 14px;
     padding-top: 5px;
 }
 
-.languages span {
+.languages__active {
+    font-size: 41px;
+    padding-left: 14px;
+    padding-top: 5px;
     color: #0065c7;
 }
 
-.languages a {
-    text-decoration: none;
-}
 
 .header__intro {
     margin-top: 25px;
@@ -136,7 +136,7 @@ hr.hr__style {
     font-weight: bold;
     color: white;
     border: none;
-    padding: 0.8% 5%;
+    padding: 1.2% 7%;
 }
 
 .btn__restart {
@@ -166,6 +166,9 @@ hr.hr__style {
 
 @media (min-width: 1024px)
 {
+    h2 {
+        font-size: 28px;
+    }
     .header__img {
         margin-top: -40px;
     }

@@ -8,7 +8,11 @@
                 <img src="{{ asset('images/apok_logo.png') }}" alt="logo">
             </div>
             <div class="col-md-6">
-                <h2 class="languages"><a class="languages" href="{{ route('home', 'nl') }}">NL</a><span class="mx-3">-</span><span><a href="{{ route('home', 'fr') }}">FR</a></span></h2>
+                <h2 class="languages">
+                    <a class="{{ $lang == 'nl' ? 'languages__active' : 'languages__not-active' . " " . 'text-decoration-none' }}" href="{{ route('home', 'nl') }}">NL</a>
+                    <span class="mx-3">-</span>
+                    <a class="{{ $lang == 'fr' ? 'languages__active' : 'languages__not-active' . " " . 'text-decoration-none' }}" href="{{ route('home', 'fr') }}">FR</a>
+                </h2>
             </div>
 
             <div class="col-lg-5 header__intro">
