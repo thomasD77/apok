@@ -16,6 +16,7 @@ class SubscriberController extends Controller
     {
         if($request->locale == 'nl')
         {
+
             $request->validate([
                 'question_1'=>'required',
                 'question_2'=>'required',
@@ -25,7 +26,6 @@ class SubscriberController extends Controller
                 'first_name'=>'required',
                 'last_name'=>'required',
                 'email'=>'required',
-                'telephone'=>'required',
                 'company'=>'required',
                 'tiebreaker_question'=>'required',
             ],
@@ -38,7 +38,6 @@ class SubscriberController extends Controller
                     'first_name.required'=>'Voornaam is verplicht in te vullen.',
                     'last_name.required'=>'Naam is verplicht in te vullen.',
                     'email.required'=>'E-mail is verplicht in te vullen.',
-                    'telephone.required'=>'Telefoon of GSM is verplicht in te vullen.',
                     'company.required'=>'Bedrijf is verplicht in te vullen.',
                     'tiebreaker_question.required'=>'Schiftingsvraag is verplicht in te vullen.',
                 ]
@@ -56,7 +55,6 @@ class SubscriberController extends Controller
                 'first_name'=>'required',
                 'last_name'=>'required',
                 'email'=>'required',
-                'telephone'=>'required',
                 'company'=>'required',
                 'tiebreaker_question'=>'required',
             ],
@@ -69,7 +67,6 @@ class SubscriberController extends Controller
                     'first_name.required'=>'Le prénom est obligatoire.',
                     'last_name.required'=>'Le nom est obligatoire.',
                     'email.required'=>"L' e-mail est obligatoire.",
-                    'telephone.required'=>'Téléphone ou GSM obligatoire à renseigner.',
                     'company.required'=>"L'entreprise doit remplir.",
                     'tiebreaker_question.required'=>'La question de départage doit être complétée.',
                 ]
@@ -86,7 +83,6 @@ class SubscriberController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'telephone' => $request->telephone,
             'company' => $request->company,
             'tiebreaker_question' => $request->tiebreaker_question,
             'approval' => $request->approval,

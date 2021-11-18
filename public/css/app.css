@@ -136,7 +136,7 @@ hr.hr__style {
     font-weight: bold;
     color: white;
     border: none;
-    padding: 1.2% 7%;
+    padding: 1.4% 10%;
 }
 
 .btn__restart {
@@ -145,6 +145,7 @@ hr.hr__style {
     margin-right: 4%;
     text-decoration: none;
     color: white;
+    text-align: center;
 }
 
 /*** Responsive ***/

@@ -19,7 +19,7 @@ class CreateSubscribersTable extends Migration
             $table->text('question_1')->nullable();
             $table->text('question_2')->nullable();
             $table->text('question_3')->nullable();
-            $table->boolean('question_4')->default(0);
+            $table->string('question_4')->default(0);
             $table->integer('question_5')->default(0);
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
