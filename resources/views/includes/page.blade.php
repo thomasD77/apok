@@ -19,7 +19,7 @@
                 <h1>{{__('Goeiedag,')}}</h1>
                 <h2>
                     {{__('Graag jouw informatie over APOK;')}}
-                    {{__('Vul enkele vragen in en win mogelijk een exta prijs!')}}
+                    {{__('Vul enkele vragen in en win mogelijk een extra prijs!')}}
                 </h2>
             </div>
             <div class="col-lg-7 pe-0">
